@@ -1,9 +1,16 @@
 <template>
-  <div id="add">
-    <p v-if="copy" @click="hideMessage()">Une tâche avec ce nom existe déjà... X</p>
-    <label for="newTodo">Nouveau :</label>
-    <input id="newTodo" type="text" v-model="newTodo"/>
-    <button @click="resetNewTodo()">Ajouter</button>
+  <div class="form">
+    <div v-if="errorMessage" class="error">{{ errorMessage }}</div>
+    <form @submit.prevent="addNewTodo()">
+      <input
+        id="newTodo"
+        type="text"
+        v-model="newTodo"
+        placeholder="enter a todo title"
+        maxlength="80"
+      />
+      <button>ADD</button>
+    </form>
   </div>
 </template>
 
@@ -16,40 +23,89 @@ export default {
   data() {
     return {
       newTodo: '',
-      copy: false,
+      errorMessage: '',
     };
   },
+  watch: {
+    newTodo: {
+      handler() {
+        this.errorMessage = '';
+      },
+    },
+  },
   methods: {
-    resetNewTodo() {
+    addNewTodo() {
       if (String(this.newTodo).split(' ').join('') !== '') {
         if (this.click(this.newTodo)) {
-          this.copy = false;
+          this.errorMessage = '';
           this.newTodo = '';
         } else {
-          this.copy = true;
+          this.errorMessage = 'A task with this name is already existing...';
         }
       } else {
-        this.copy = false;
+        this.errorMessage = '';
         this.newTodo = '';
       }
-    },
-    hideMessage() {
-      this.copy = false;
-      this.newTodo = '';
     },
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-#add {
-  margin-top: 20px;
+<style scoped>
+.form {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-#add p {
+
+form {
+  height: 6.25em;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  border-radius: 1000px;
+  background: #ffffff;
+}
+
+input {
+  height: 100%;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: inherit;
+  color: #ff7b73;
+  text-align: center;
+}
+
+input::placeholder {
+  opacity: 0.7;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
   cursor: pointer;
+  height: 80%;
+  width: 120px;
+  border: none;
+  border-radius: 80px;
+  background: #ff7b73;
+  font-size: 1.5rem;
+  color: inherit;
+  margin-right: 10px;
 }
-#add button {
-  margin: 5px;
+
+.error {
+  margin: 0.5rem 2rem;
+  max-width: 100%;
+  font-size: 1.4em;
+  font-family: inherit;
+  padding: 1rem 2rem;
+  color: #ffffff;
+  text-align: center;
 }
 </style>

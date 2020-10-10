@@ -1,9 +1,7 @@
 <template>
   <div class="todo">
-    <p @click="remove">❌</p>
-    <h1>{{name}}</h1>
-    <p v-if="completed" @click="toggle">[✅]</p>
-    <p v-else @click="toggle">[ ]</p>
+    <span @click="remove">❌</span>
+    <h1 @click="toggle" :class="completed ? 'is-completed' : null">{{name}}</h1>
   </div>
 </template>
 
@@ -11,23 +9,34 @@
 export default {
   name: 'Todo',
   props: {
-    name: String,
-    completed: Boolean,
-    toggle: Function,
-    remove: Function,
+    name: { type: String, required: true },
+    completed: { type: Boolean, required: true },
+    toggle: { type: Function, required: true },
+    remove: { type: Function, required: true },
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-.todo * {
-  display: inline;
-  padding: 10px;
+<style scoped>
+.todo {
+  margin: 20px;
 }
 
-.todo p {
+h1, span {
   cursor: pointer;
+  display: inline;
+  font-size: 2em;
 }
 
+span {
+  margin-right: 30px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.is-completed {
+  text-decoration: line-through;
+}
 </style>

@@ -22,12 +22,6 @@ To run this application locally, open a terminal at the root project. To install
 npm install
 ```
 
-or
-
-```sh
-yarn install
-```
-
 Then :
 
 ```sh
