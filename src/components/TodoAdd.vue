@@ -70,7 +70,7 @@ export default {
 }
 
 form {
-  height: 6.25em;
+  height: 5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
