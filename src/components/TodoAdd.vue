@@ -54,17 +54,32 @@ export default {
 <style scoped>
 .form {
   max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 form {
   height: 6.25em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: baseline;
-  align-items: center;
+  -webkit-box-pack: baseline;
+      -ms-flex-pack: baseline;
+          justify-content: baseline;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 1000px;
   background: #ffffff;
 }
@@ -77,6 +92,22 @@ input {
   color: inherit;
   color: #ff7b73;
   text-align: center;
+}
+
+input::-webkit-input-placeholder {
+  opacity: 0.7;
+}
+
+input::-moz-placeholder {
+  opacity: 0.7;
+}
+
+input:-ms-input-placeholder {
+  opacity: 0.7;
+}
+
+input::-ms-input-placeholder {
+  opacity: 0.7;
 }
 
 input::placeholder {
