@@ -37,13 +37,11 @@ export default {
     addNewTodo() {
       if (String(this.newTodo).split(' ').join('') !== '') {
         if (this.click(this.newTodo)) {
-          this.errorMessage = '';
           this.newTodo = '';
         } else {
           this.errorMessage = 'A task with this name is already existing...';
         }
       } else {
-        this.errorMessage = '';
         this.newTodo = '';
       }
     },
@@ -57,29 +55,18 @@ export default {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
 }
 
 form {
   height: 5em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: baseline;
-      -ms-flex-pack: baseline;
-          justify-content: baseline;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   border-radius: 1000px;
   background: #ffffff;
 }
@@ -89,25 +76,9 @@ input {
   background: none;
   border: none;
   font-size: 1.5rem;
-  color: inherit;
   color: #ff7b73;
   text-align: center;
-}
-
-input::-webkit-input-placeholder {
-  opacity: 0.7;
-}
-
-input::-moz-placeholder {
-  opacity: 0.7;
-}
-
-input:-ms-input-placeholder {
-  opacity: 0.7;
-}
-
-input::-ms-input-placeholder {
-  opacity: 0.7;
+  margin: 0 10px 0 20px;
 }
 
 input::placeholder {
@@ -120,22 +91,20 @@ input:focus {
 
 button {
   cursor: pointer;
-  height: 80%;
-  width: 120px;
   border: none;
   border-radius: 80px;
   background: #ff7b73;
   font-size: 1.5rem;
   color: inherit;
-  margin-right: 10px;
+  padding: 10px 20px;
+  margin-right: 15px;
 }
 
 .error {
-  margin: 0.5rem 2rem;
+  margin: 0 2rem 1rem 2rem;
   max-width: 100%;
   font-size: 1.4em;
   font-family: inherit;
-  padding: 1rem 2rem;
   color: #ffffff;
   text-align: center;
 }

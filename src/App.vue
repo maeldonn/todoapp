@@ -14,7 +14,7 @@
         </div>
       </div>
       <div v-if="todos.length !== 0" class="remove-all">
-        <button @click="removeAll">REMOVE ALL</button>
+        <button class="remove" @click="removeAll">REMOVE ALL</button>
       </div>
     </section>
     <Footer />
@@ -99,6 +99,16 @@ body {
   background: #ff7b73;
 }
 
+::-moz-selection {
+  color: #ff7b73;
+  background: #ffffffff;
+}
+
+::selection {
+  color: #ff7b73;
+  background: #ffffffff;
+}
+
 #app {
   height: 100%;
   font-family: "Roboto", sans-serif;
@@ -107,47 +117,38 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   color: #ffffff;
 }
 
 .todolist {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 80%;
 }
 
 .list {
-  margin: 2rem auto;
-  height: 250px;
+  margin: 0 2rem;
+  height: 40vh;
   overflow: scroll;
-  max-width: 80%;;
+  max-width: 100%;
 }
 
 .remove-all {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
-button {
-  width: 150px;
+.remove {
   cursor: pointer;
   border: none;
   border-radius: 80px;
   background: #ffffff;
   font-size: 1.5rem;
   color: #ff7b73;
-  margin-right: 10px;
+  padding: 10px 15px;
 }
 </style>

@@ -4,7 +4,7 @@ A little todoApp based on Vue.js.
 
 ## Live demo
 
-Coming soon...
+https://maeldonn.github.io/todoapp/
 
 ## Requirement
 
