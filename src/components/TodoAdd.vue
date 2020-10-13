@@ -81,6 +81,16 @@ input {
   margin: 0 10px 0 20px;
 }
 
+input::-moz-selection {
+  color: #ffffffff;
+  background: #ff7b73;
+}
+
+input::selection {
+  color: #ffffffff;
+  background: #ff7b73;
+}
+
 input::placeholder {
   opacity: 0.7;
 }
