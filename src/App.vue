@@ -4,14 +4,14 @@
     <section class="todolist">
       <TodoAdd :click="addTodo" />
       <div class="list">
-        <div v-for="item in todos" :key="item.name">
+        <span v-for="item in todos" :key="item.name">
           <Todo
             :name="item.name"
             :completed="item.completed"
             :toggle="() => toggleTodo(item)"
             :remove="() => removeTodo(item)"
           />
-        </div>
+        </span>
       </div>
       <div v-if="todos.length !== 0" class="remove-all">
         <button class="remove" @click="removeAll">REMOVE ALL</button>

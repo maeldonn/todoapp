@@ -118,4 +118,26 @@ button {
   color: #ffffff;
   text-align: center;
 }
+
+@media only screen and (max-width: 470px) {
+form {
+  height: 4em;
+}
+
+input {
+  font-size: 1.2rem;
+  margin: 0 5px 0 10px;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+
+.error {
+  margin: 0 2rem 1rem 2rem;
+  font-size: 1.2em;
+}
+}
 </style>

@@ -1,8 +1,4 @@
-* [ ] Surlignage input
-
-
 * [ ] Delete unused css
-* [ ] Responsive
 * [ ] Deploy
 * [ ] css effects on button hover
 * [ ] css effects on input focus
@@ -10,6 +6,7 @@
 * [ ] flavicon
 * [ ] bug on deploy
 
-Bugs :
 
-Todo overflow
+Issues:
+
+* [ ] Todo overflow if word too long
