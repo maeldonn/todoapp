@@ -168,5 +168,13 @@ body {
   font-size: 1.5rem;
   color: #ff7b73;
   padding: 10px 15px;
+  -webkit-transition: color 0.5s ease-in-out;
+  -o-transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
+}
+
+.remove:hover {
+  background: #ff7b73;
+  color: #ffffff;
 }
 </style>
