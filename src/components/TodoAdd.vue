@@ -55,18 +55,26 @@ export default {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
-
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 form {
   height: 5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 1000px;
   background: #ffffff;
 }
@@ -91,6 +99,22 @@ input::selection {
   background: #ff7b73;
 }
 
+input::-webkit-input-placeholder {
+  opacity: 0.7;
+}
+
+input::-moz-placeholder {
+  opacity: 0.7;
+}
+
+input:-ms-input-placeholder {
+  opacity: 0.7;
+}
+
+input::-ms-input-placeholder {
+  opacity: 0.7;
+}
+
 input::placeholder {
   opacity: 0.7;
 }
@@ -108,6 +132,14 @@ button {
   color: inherit;
   padding: 10px 20px;
   margin-right: 15px;
+  -webkit-transition: color 0.5s ease-in-out;
+  -o-transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
+}
+
+button:hover {
+  background: #ffffff;
+  color: #ff7b73;
 }
 
 .error {
@@ -120,24 +152,24 @@ button {
 }
 
 @media only screen and (max-width: 470px) {
-form {
-  height: 4em;
-}
+  form {
+    height: 4em;
+  }
 
-input {
-  font-size: 1.2rem;
-  margin: 0 5px 0 10px;
-}
+  input {
+    font-size: 1.2rem;
+    margin: 0 5px 0 10px;
+  }
 
-button {
-  font-size: 1.2rem;
-  padding: 5px 10px;
-  margin-right: 10px;
-}
+  button {
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    margin-right: 10px;
+  }
 
-.error {
-  margin: 0 2rem 1rem 2rem;
-  font-size: 1.2em;
-}
+  .error {
+    margin: 0 2rem 1rem 2rem;
+    font-size: 1.2em;
+  }
 }
 </style>
